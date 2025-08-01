@@ -1,0 +1,126 @@
+﻿<Window x:Class="hospitalsys.HomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:hopsitalsys"
+        mc:Ignorable="d"
+        Title="HomePage"
+        WindowState="Maximized"
+        WindowStyle="SingleBorderWindow"
+        ResizeMode="CanResize" d:DesignHeight="464.713" Width="1221"
+        Background="#F4F6F9">
+    <!--Side Menu-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <DockPanel Background="#003049" Grid.Column="0">
+                <StackPanel DockPanel.Dock="Top">
+                <TextBlock Text="Logo" Foreground="White"
+                            Style="{StaticResource T}"
+                           Padding="0, 20, 0, 0"
+                           FontSize="20" FontWeight="SemiBold"/>
+                <Separator/>
+                <Button Style="{StaticResource NavButton}" Content="Home"/>
+                    <Button Style="{StaticResource NavButton}" Content="Appointment"/>
+                    <Button Style="{StaticResource NavButton}" Content="labs"/>
+                    <Button Style="{StaticResource NavButton}" Content="medicin"/>
+                </StackPanel>
+                <StackPanel DockPanel.Dock="Bottom" Margin="0, 0, 0, 20">
+                    <Button Style="{StaticResource NavButton}" Content="settings"/>
+                    <Button Style="{StaticResource NavButton}" Content="LogOut"/>
+                </StackPanel>
+            </DockPanel>
+        <!--Header-->
+        <Grid Grid.Column="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+            <Grid x:Name="Header" 
+                  VerticalAlignment="Top" Grid.Row="0" 
+                  Background="#F0F4F8">
+                <Grid.Effect>
+                <DropShadowEffect Color="Black"
+                              Direction="250"
+                              ShadowDepth="5"
+                              BlurRadius="10"
+                              Opacity="0.5"/>
+            </Grid.Effect>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Style="{StaticResource T}" Text="Abdelrhman" TextAlignment="Left"
+                       FontSize="18" Margin="20"
+                           Grid.Column="0"/>
+            <TextBlock Grid.Column="1"
+                    Style="{StaticResource T}" TextAlignment="Center"
+                       FontSize="20" FontWeight="SemiBold" Foreground="#219EBC" 
+                       Text="HspName"/>
+            <TextBlock Grid.Column="2"
+                    Style="{StaticResource T}" TextAlignment="Right"
+                       FontSize="18" Text="Role" Margin="20"/>
+        </Grid>
+         <!--MainContanet-->
+            <Grid Height="40" VerticalAlignment="Top" Grid.Row="1" Background="#E9ECEF">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                    <TextBox 
+                        Margin="10, 0, 0, 0"
+                            Width="100"
+                            materialDesign:HintAssist.Hint="ID..."
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox 
+                            Width="100"
+                            materialDesign:HintAssist.Hint="Name..."
+                        Margin="20, 0, 20, 0"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox 
+                            Width="100"
+                            materialDesign:HintAssist.Hint="Number..."
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <ComboBox
+                        Width="100"
+                        Padding="10"
+                        Margin="20, 0, 20, 0"
+                        materialDesign:HintAssist.Hint="Clinic..."
+                        Style="{StaticResource MaterialDesignComboBox}"/>
+                    <DatePicker
+                        Width="120"
+                        Padding="10, 0, 0, 0"
+                        materialDesign:HintAssist.Hint="Date.."
+                        Style="{StaticResource MaterialDesignOutlinedDatePicker}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0, 0, 80, 0" Grid.Column="1">
+                    <Button Width="60"
+                            Content="Add" 
+                            Style="{StaticResource NewBtn}"/>   
+                    <Button
+                        Width="60"
+                            Margin="0, 0, 10, 0"
+                            Background="#219EBC"
+                            Foreground="#000000"
+                            Content="Edit"
+                            FontSize="10"
+                            Style="{StaticResource MaterialDesignFlatButton}"/>
+
+                    <Button Width="60"
+                            Margin="0, 0, 10, 0"
+                            Background="#219EBC"
+                            Foreground="#000000"
+                            Content="View"
+                            FontSize="10"
+                            Style="{StaticResource MaterialDesignFlatButton}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
