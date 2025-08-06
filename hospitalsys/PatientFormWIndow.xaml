@@ -1,0 +1,82 @@
+﻿<Window x:Class="hospitalsys.PatientFormWIndow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hospitalsys"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        WindowStyle="SingleBorderWindow"
+        Title="PatientFormWIndow" Height="350" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock
+            Text="NewPatientForm"
+                   Foreground="#2C2B2B"
+                   FontSize="20"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>        
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Margin="5" VerticalAlignment="Center" 
+                       Text="Name:"/>
+            <TextBox Grid.Row="0" Grid.Column="0" Name="PatientName" VerticalAlignment="Center" Margin="45, 0, 0, 0" Text="" />
+            
+            <TextBlock Grid.Row="0" Grid.Column="1" Margin="5" VerticalAlignment="Center" 
+                       Text="Phone:"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Name="PatientNumber" VerticalAlignment="Center" Margin="45, 0, 0, 0"
+                     PreviewTextInput="PatientNumber_PreviewTextInput"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center" 
+                       Text="Age"/>
+            <TextBox Grid.Row="1" Grid.Column="0" Name="PatientAge" VerticalAlignment="Center" Margin="45, 0, 0, 0" />
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Margin="5" VerticalAlignment="Center" 
+                       Text="Address"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Name="PatientAddress" VerticalAlignment="Center" Margin="55, 0, 0, 0" />
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center" 
+                       Text="Nationality:"/>
+            <TextBox Grid.Row="2" Grid.Column="0" Name="PatientNationality" VerticalAlignment="Center" Margin="70, 0, 0, 0" />
+
+            <ComboBox Grid.Row="2" Grid.Column="1" Margin="10, 0, 0, 0"
+                      materialDesign:HintAssist.Hint="Gender"
+                      x:Name="PatientGender"
+                      Style="{StaticResource MaterialDesignComboBox}">
+                <ComboBoxItem Content="Male"/>
+                <ComboBoxItem Content="feMale"/>
+            </ComboBox>
+
+            <ComboBox Grid.Row="3" Grid.Column="0" Margin="10, 0, 0, 10"
+                      x:Name="PatientInsurance"
+                      materialDesign:HintAssist.Hint="Insurance"
+                      Style="{StaticResource MaterialDesignComboBox}">
+                <ComboBoxItem Content="Free"/>
+                <ComboBoxItem Content="Disscount"/>
+            </ComboBox>
+            
+            <Button Grid.Row="3" Grid.Column="2" Content="Save"
+                Margin="0"
+                HorizontalAlignment="Center" Width="100"
+                    Style="{StaticResource MaterialDesignRaisedButton}"
+                      FontFamily="Arial" FontSize="14" FontWeight="Bold"
+                    Click="SaveNew_Click"/>
+        </Grid>
+    </Grid> 
+</Window>
